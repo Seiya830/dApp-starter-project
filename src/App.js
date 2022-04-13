@@ -214,7 +214,7 @@ const App = () => {
         )}
         {currentAccount && (
           <button className="waveButton">Wallet Connected</button>
-        )}
+          )}
         {/* waveボタンにwave関数を連動 */}
         {currentAccount && (
           <button className="waveButton" onClick={wave}>
@@ -230,23 +230,24 @@ const App = () => {
             id="message"
             value={messageValue}
             onChange={(e) => setMessageValue(e.target.value)}
-          />
-        )}
+            />
+            )}
         {/* 履歴を表示する */}
         {currentAccount &&
           allWaves
-            .slice(0)
-            .reverse()
-            .map((wave, index) => {
-              return (
-                <div
-                  key={index}
-                  style={{
-                    backgroundColor: "#F8F8FF",
-                    marginTop: "16px",
-                    padding: "8px",
-                  }}
-                >
+          .slice(0)
+          .reverse()
+          .map((wave, index) => {
+            return (
+              <div
+              key={index}
+              style={{
+                color: "#fff",
+                backgroundColor: "#161B22",
+                marginTop: "16px",
+                padding: "8px",
+              }}
+              >
                   <div>Address: {wave.address}</div>
                   <div>Time: {wave.timestamp.toString()}</div>
                   <div>Message: {wave.message}</div>
